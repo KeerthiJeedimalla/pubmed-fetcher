@@ -5,10 +5,14 @@ def test_filter_industry_affiliations():
     test_articles = [
         {
             'pmid': '1',
+            'title': 'Test Study 1',
+            'date': '2023-Jan',
             'affiliations': ['Pfizer Inc', 'Harvard University']
         },
         {
-            'pmid': '2', 
+            'pmid': '2',
+            'title': 'Test Study 2',
+            'date': '2023-Feb',
             'affiliations': ['MIT']
         }
     ]

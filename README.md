@@ -1,15 +1,14 @@
 # PubMed Industry Affiliation Fetcher
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+
 
 A Python tool to identify research papers with pharmaceutical/biotech industry affiliations from PubMed.
 
 ## Features
-- 🔍 PubMed API integration
-- 🏢 Industry affiliation detection
-- 💾 CSV output with PMIDs, titles, dates, and affiliations
-- � CLI interface with query options
+- PubMed API integration
+- Industry affiliation detection
+- CSV output with PMIDs, titles, dates, and affiliations
+- CLI interface with query options
 
 ## Installation
 ```bash
@@ -45,4 +44,4 @@ INDUSTRY_KEYWORDS = {
 ```
 
 ## License
-MIT - See [LICENSE](LICENSE) for details.
+MIT - See for details.

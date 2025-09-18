@@ -1,6 +1,6 @@
 from typing import List, Dict
 
-# Keywords to identify industry affiliations
+
 INDUSTRY_KEYWORDS = {
     'pharma', 'biotech', 'pharmaceutical', 'inc', 'ltd',
     'corporation', 'company', 'research and development',

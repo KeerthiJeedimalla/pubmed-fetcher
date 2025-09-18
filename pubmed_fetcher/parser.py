@@ -21,11 +21,11 @@ def parse_pubmed_xml(xml_content: str) -> List[Dict]:
     
     for article in soup.find_all('PubmedArticle'):
         try:
-            # Extract basic information
+        
             pmid = article.find('PMID').text if article.find('PMID') else 'N/A'
             title = article.find('ArticleTitle').text if article.find('ArticleTitle') else 'Untitled'
             
-            # Extract authors and affiliations
+            
             authors = []
             affiliations = set()
             for author in article.find_all('Author'):
@@ -39,7 +39,7 @@ def parse_pubmed_xml(xml_content: str) -> List[Dict]:
                         authors.append((name, aff_text))
                         affiliations.add(aff_text)
             
-            # Robust date extraction
+            
             pub_date = article.find('PubDate')
             date_parts = []
             if pub_date:

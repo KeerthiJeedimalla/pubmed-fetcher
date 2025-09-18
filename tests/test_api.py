@@ -1,5 +1,5 @@
 import requests
-from typing import List  # Add this import
+from typing import List  
 from pubmed_fetcher.api import search_pubmed
 import pytest
 
@@ -14,10 +14,10 @@ def test_empty_query():
     with pytest.raises(ValueError):
         search_pubmed("")
 
-# In api.py
+
 def search_pubmed(query: str, retmax: int = 100) -> list[str]:
     """Fetch PubMed article IDs (PMIDs) for a query"""
-    if not query.strip():  # Check for empty/whitespace-only queries
+    if not query.strip():  
         raise ValueError("Query cannot be empty")
     
     base_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
@@ -34,4 +34,4 @@ def search_pubmed(query: str, retmax: int = 100) -> list[str]:
         return response.json().get("esearchresult", {}).get("idlist", [])
     except Exception as e:
         print(f"API Error: {e}")
-        return []  # Return empty list on network/API errors
+        return []  

@@ -21,7 +21,7 @@ def main(query: str, output: str, verbose: bool):
     logger.info(f"Starting search for: {query}")
     
     try:
-        # 1. Search PubMed
+        
         pmids = search_pubmed(query, retmax=50)
         logger.info(f"Found {len(pmids)} potential articles")
         
@@ -29,20 +29,20 @@ def main(query: str, output: str, verbose: bool):
             logger.error("No articles found for query")
             return
         
-        # 2. Fetch details
+        
         logger.debug("Fetching article details...")
         xml_data = fetch_article_details(pmids)
         
-        # 3. Parse and filter
+    
         logger.debug("Parsing XML...")
         articles = parse_pubmed_xml(xml_data)
         filtered = filter_industry_affiliations(articles)
         logger.info(f"Found {len(filtered)} articles with industry affiliations")
         
-        # 4. Output results
+        
         if output:
             output_path = Path(output)
-            output_path.write_text("")  # Clear existing file
+            output_path.write_text("")  
             with open(output, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.DictWriter(f, fieldnames=['pmid', 'title', 'date', 'affiliations'])
                 writer.writeheader()

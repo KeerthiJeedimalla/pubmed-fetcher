@@ -39,14 +39,14 @@ def test_parse_pubmed_xml_structure():
     """Test XML parsing extracts correct fields"""
     articles = parse_pubmed_xml(SAMPLE_XML)
     
-    # Test basic fields
+    
     assert len(articles) == 1
     article = articles[0]
     assert article['pmid'] == '12345'
     assert article['title'] == 'Test Cancer Study'
     assert article['date'] == "2023-Jun"
     
-    # Test authors and affiliations
+    
     assert len(article['authors']) == 2
     assert ("John Smith", "Harvard University") in article['authors']
     assert ("Jane Doe", "Pfizer Inc") in article['authors']
